@@ -9,7 +9,7 @@ var text = name.value;
 const serverURL = url + text;
 
 function fetchApi(){
-    fetch(serverURL).then(response => console.log(response))
+    fetch(serverURL).then(response => response.json()).then(json=>outputDiv.innertext=json)
 }
 
 otpBtn.addEventListener("click", fetchApi)
